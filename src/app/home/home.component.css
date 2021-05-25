@@ -1,0 +1,74 @@
+#btn1{
+  position: absolute;
+  top: 300px;
+  left: 30px;
+
+}
+body {
+	background: url(https://www.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_9728603.htm#page=1&query=background&position=0) no-repeat center center fixed;
+	background-size: cover
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  /*background-color: #333;*/
+  background-color: rgb(212, 139, 79);
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: rgb(212, 139, 79);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(212, 139, 79);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(212, 139, 79);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: rgb(212, 139, 79);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(212, 139, 79);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

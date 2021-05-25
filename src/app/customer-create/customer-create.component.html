@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create Customer Page</title> 
+    <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<div class="container">
+  <h3>Create Customer </h3>
+  <div class="form-group">
+      <label for="lblcustomerName">Customer Name</label>
+      <input type="text" class="form-control" id="lblcustomerName" [(ngModel)]="customerDetails.customerName"
+          placeholder="Enter Customer Name" />
+
+  </div>
+  <div class="form-group">
+      <label for="lblcustomerPhoneno">Contact</label>
+      <input type="number" class="form-control" id="lblcustomerPhoneno" [(ngModel)]="customerDetails.customerPhoneno"
+          placeholder="Enter Number" />
+
+  </div>
+  
+  <div class="form-group">
+      <label for="lblcustomerEmail">Email</label>
+      <input type="email" class="form-control" id="lblcustomerEmail" [(ngModel)]="customerDetails.customerEmail"
+          placeholder="Enter Email" />
+        </div>
+
+ <div class="form-group">
+            <label for="lblcustomerPassword">Password</label>
+            <input type="text" class="form-control" id="lblcustomerPassword" [(ngModel)]="customerDetails.customerPassword"
+                placeholder="Enter password" />
+  </div>
+  
+  <div class="form-group">
+      <button class="btn btn-primary" (click)="addCustomer()">Submit</button>
+  </div>
+</div>
+<router-outlet></router-outlet>
+</body>

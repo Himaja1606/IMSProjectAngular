@@ -1,0 +1,23 @@
+
+<div class="container">
+  <h3>Update Order </h3>
+  <div class="form-group">
+        <label for="lblorderQuantity">Order Quantity</label>
+        <input type="number" class="form-control" id="lblorderQuantity" [(ngModel)]="orderData.orderQuantity"
+            placeholder="Enter Order Quantity" />
+  
+    </div>
+  
+    <div class="form-group">
+        <label for="lblorderPrice">Order Price</label>
+        <input type="email" class="form-control" id="lblorderPrice" [(ngModel)]="orderData.orderPrice"
+            placeholder="Enter order Price" />
+  
+    </div>
+    
+ 
+  <div class="form-group">
+      <button class="btn btn-primary" (click)="updateOrder()">Update</button>
+  </div>
+  <router-outlet></router-outlet>
+

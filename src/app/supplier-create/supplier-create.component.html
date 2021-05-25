@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create Customer Page</title> 
+    <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<div class="container">
+  <h3>Create Supplier </h3>
+  <div class="form-group">
+      <label for="lblSupplierName">Supplier Name</label>
+      <input type="text" class="form-control" id="lblSupplierName" [(ngModel)]="supplierDetails.supplierName"
+          placeholder="Enter Customer Name" />
+
+  </div>
+  <div class="form-group">
+      <label for="lblsuppliedQuantity">suppliedQuantity</label>
+      <input type="number" class="form-control" id="lblsuppliedQuantity" [(ngModel)]="supplierDetails.suppliedQuantity"
+          placeholder="Enter Number" />
+
+  </div>
+  
+  <div class="form-group">
+      <button class="btn btn-primary" (click)="addSupplier()">Submit</button>
+  </div>
+</div>
+<router-outlet></router-outlet>
+</body>

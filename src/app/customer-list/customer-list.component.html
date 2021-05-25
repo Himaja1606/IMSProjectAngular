@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customer List Page</title> 
+    <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+</head>
+
+<body>
+    
+
+<h2>Customer List</h2>
+<!--<ul *ngFor="let c of customers">
+    <li><div>
+        <a routerLink="/app-customer-edit/{{c.cid}}" class="list-group-item list-group-item-action list-group-item-primary">
+            {{c.cid}} - {{c.cname}} - {{c.phone}} -{{c.email}} 
+        </a>
+        <button class="btn-primary" routerLink="/app-customer-delete/{{c.cid}}
+        " >delete</button>
+       
+       <!-- <button class="btn-primary" routerLink="/app-customer-edit/{{c.cid}} 
+        " >update</button>
+    </div>
+    </li>
+</ul>-->
+<ul *ngFor="let c of customers">
+<li>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Customer Id</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Customer Contact</th>
+        <th scope="col">Email Address</th>
+        <th colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+       <!--<th scope="row">1</th>--> 
+        <td>{{c.customerId}}</td>
+        <td>{{c.customerName}}</td>
+        <td>{{c.customerPhoneno}}</td>
+        <td>{{c.customerEmail}}</td>
+        <td> <button class="btn-primary" routerLink="/app-customer-delete/{{c.customerId}}
+            " >delete</button></td>
+        <td> <button class="btn-primary" routerLink="/app-customer-edit/{{c.customerId}}
+                " >update</button></td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</li>
+</ul>
+ 
+ 
+  <div class="row mb-3 px-3">
+     <button type="submit" class="btn btn-blue text-center" routerLink="/app-customer-create">Add Customer</button>
+     <button type="submit" class="btn btn-blue text-center" routerLink="/app-home">Home</button>
+    </div>
+<router-outlet></router-outlet>
+</body>

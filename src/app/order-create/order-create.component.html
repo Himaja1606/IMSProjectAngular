@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create Customer Page</title> 
+    <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h3>Create Order </h3>
+
+    <div class="form-group">
+      <label for="lblorderDate">Ordered Date</label>
+      <input type="date" class="form-control" id="orderlblDate"  [(ngModel)]="orderDetails.orderDate" 
+      name="input" placeholder="yyyy-MM-dd" min="2013-01-01" max="2021-12-31" required />
+        </div>
+
+    <div class="form-group">
+        <label for="lblorderQuantity">Order Quantity</label>
+        <input type="number" class="form-control" id="lblorderQuantity" [(ngModel)]="orderDetails.orderQuantity"
+            placeholder="Enter Order Quantity" />
+  
+    </div>
+  
+    <div class="form-group">
+        <label for="lblorderPrice">Order Price</label>
+        <input type="email" class="form-control" id="lblorderPrice" [(ngModel)]="orderDetails.orderPrice"
+            placeholder="Enter order Price" />
+  
+    </div>
+    <div class="form-group">
+      <label for="lblcustomerId">Customer ID</label>
+      <input type="number" class="form-control" id="lblcustomerId" [(ngModel)]="orderDetails.customer.customerId"  />
+
+  </div>
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="addOrder()">Add</button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</body>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>warehouse List Page</title> 
+    <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+</head>
+
+<body>
+    
+
+<h2>Inventory List</h2>
+<!--<ul *ngFor="let w of warehouse">
+    <li><div>
+        <a routerLink="/app-warehouse-edit/{{w.inventoryid}}" class="list-group-item list-group-item-action list-group-item-primary">
+            {{w.inventoryid}} - {{w.inventoryreceived}} - {{w.inventoryshipped}} -{{w.inventoryonhand}}  - {{w.productid}} -{{w.supplierid}}
+        </a>
+        <button class="btn-primary" routerLink="/app-warehouse-delete/{{w.inventoryid}}
+        " >delete</button>
+       
+       <!-- <button class="btn-primary" routerLink="/app-warehouse-edit/{{w.inventoryid}} 
+        " >update</button>
+    </div>
+    </li>
+</ul>-->
+<ul *ngFor="let w of warehouse">
+<li>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Inventory Id</th>
+        <th scope="col">Inventory Received</th>
+        <th scope="col">Inventory Shipped</th>
+        <th scope="col">Inventory Onhand</th>
+        
+
+        <th colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+       <!--<th scope="row">1</th>--> 
+        <td>{{w.inventoryId}}</td>
+        <td>{{w.inventoryReceived}}</td>
+        <td>{{w.inventoryShipped}}</td>
+        <td>{{w.inventoryOnhand}}</td>
+        
+
+       
+
+       
+        <td> <button class="btn-primary" routerLink="/app-warehouse-edit/{{w.inventoryId}}
+                " >update</button></td>
+        <td> <button class="btn-primary" routerLink="/app-warehouse-delete/{{w.inventoryId}}
+                  " >delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</li>
+</ul>
+
+<a class="nav-link" routerLink="/app-warehouse-create">Create</a>
+<div class="row mb-3 px-3">
+  <button type="submit" class="btn btn-blue text-center" routerLink="/app-warehouse-create">Add Inventory</button>
+  <button type="submit" class="btn btn-blue text-center" routerLink="/app-home">Home</button> 
+</div>
+
+<router-outlet></router-outlet>
+</body>
