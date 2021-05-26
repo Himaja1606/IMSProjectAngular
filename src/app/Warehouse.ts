@@ -3,5 +3,6 @@ export interface Warehouse{
   inventoryReceived: number,
   inventoryShipped: number,
   inventoryOnhand: number,
+  dateOfrecord: Date
  
 }

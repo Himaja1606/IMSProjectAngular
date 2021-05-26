@@ -22,6 +22,7 @@ import { OrderCreateComponent } from './order-create/order-create.component';
 import { OrderEditComponent } from './order-edit/order-edit.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { OrderDeleteComponent } from './order-delete/order-delete.component';
 
 const routes: Routes = [
   
@@ -44,9 +45,11 @@ const routes: Routes = [
   { path: 'app-supplier-delete/:supplierId', component: SupplierDeleteComponent},
   { path: 'app-order-create/:customerId', component: OrderCreateComponent},
   { path: 'app-order-edit/:orderId', component: OrderEditComponent},
+  { path: 'app-order-delete/:orderId', component: OrderDeleteComponent},
   { path: 'app-order-list', component: OrderListComponent },
   { path: 'app-supplier-edit/:supplierId', component: SupplierEditComponent},
-  { path: 'app-contactus', component: ContactusComponent}
+  { path: 'app-contactus', component: ContactusComponent},
+  { path: 'app-product', component: ProductComponent}
   
 
 ];

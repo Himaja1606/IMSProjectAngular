@@ -8,15 +8,18 @@ import {Orders} from './Orders';
 
 @Injectable({
   providedIn: 'root'
+  
 })
 export class OrdersserviceService {
   private _url: string = "http://localhost:8090/InventoryManagement";
+ 
   constructor(private http: HttpClient) {
   }
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
+    
   }
   getOrders(): Observable<Orders[]> {
     return this.http.get<Orders[]>(this._url + '/allord');
@@ -37,8 +40,8 @@ export class OrdersserviceService {
 
   }
 
-  /*deleteSupplier(supplierId : number) {
-    return this.http.delete<SupplierDetails>(this._url + '/deletesupplier/' + supplierId, this.httpOptions)
+ /* deleteOrders(orderId : number) {
+    return this.http.delete<Orders>(this._url + '/deleteord/' + orderId, this.httpOptions)
       .pipe(retry(1), catchError(this.handleError));
 
   }*/

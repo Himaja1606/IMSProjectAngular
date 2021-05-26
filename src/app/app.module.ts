@@ -28,6 +28,7 @@ import { OrderCreateComponent } from './order-create/order-create.component';
 import { OrderEditComponent } from './order-edit/order-edit.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { OrderDeleteComponent } from './order-delete/order-delete.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     OrderEditComponent,
     OrderListComponent,
     ContactusComponent,
-   
+    OrderDeleteComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,7 @@ import { ContactusComponent } from './contactus/contactus.component';
     FormsModule,
     RouterModule
 
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

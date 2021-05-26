@@ -17,7 +17,22 @@ export class OrderCreateComponent implements OnInit {
   ngOnInit(){
   }
     addOrder() {
-      this.restApi.createOrders(this.orderDetails).subscribe((data: {})=> {this.router.navigate(['/app-order-list']) })
+      if((this.orderDetails.orderDate==null)){
+        alert('order date cannot be empty!!')
+      }
+      else if(this.orderDetails.orderPrice<'0'){
+        alert('order price cannot be empty!!')
+      }
+      else if(this.orderDetails.orderQuantity==null){
+        alert('order quantity cannot be zero!!!')
+      }
+      else if(this.orderDetails.customer.customerId==null){
+        alert('customerId should be enetered!!')
+      }
+      else{
+        this.restApi.createOrders(this.orderDetails).subscribe((data: {})=> {this.router.navigate(['/app-order-list']) })
+      }
+      //this.restApi.createOrders(this.orderDetails).subscribe((data: {})=> {this.router.navigate(['/app-order-list']) })
     }
   }
 

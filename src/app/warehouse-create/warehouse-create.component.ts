@@ -15,7 +15,7 @@ export class WarehouseCreateComponent implements OnInit {
 
   @Input()
   //public product = {productId:'',productName:'',productPrice:'',productQuantity:'',productDescription:''};
-  public warehouseDetails ={inventoryId:0,inventoryReceived:0 ,inventoryShipped:0 ,inventoryOnhand:0};
+  public warehouseDetails ={inventoryId:0,inventoryReceived:0 ,inventoryShipped:0 ,inventoryOnhand:0,dateOfrecord:''};
   //constructor(public restApi: WarehouseserviceService,
     constructor(public restApi: WarehouseserviceService,
     public router: Router
@@ -28,7 +28,13 @@ export class WarehouseCreateComponent implements OnInit {
 
   addInventory() {
     console.log(this.warehouseDetails);
+   // this.restApi.createWareHouse(this.warehouseDetails).subscribe((data: {}) => { this.router.navigate(['/app-warehouse-list']) })
+  if(this.warehouseDetails.inventoryShipped<=this.warehouseDetails.inventoryReceived){
     this.restApi.createWareHouse(this.warehouseDetails).subscribe((data: {}) => { this.router.navigate(['/app-warehouse-list']) })
+  }
+  else{
+    alert('inventoryshipped cannot be greater than inventory received')
+  }
   }
 
 }

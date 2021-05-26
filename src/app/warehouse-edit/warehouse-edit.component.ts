@@ -15,7 +15,7 @@ export class WarehouseEditComponent implements OnInit {
   public inventoryId: any = this.aroute.snapshot.params['inventoryId'];
   
  // public product: any = {productId:'',productName:'',productPrice:'',productQuantity:'',productDescription:''};
-  public warehouseData: any = {inventoryId:'',inventoryReceived:'' ,inventoryShipped:'' ,inventoryOnhand:''};
+  public warehouseData: any = {inventoryId:'',inventoryReceived:'' ,inventoryShipped:'' ,inventoryOnhand:'',dateOfrecord:''};
   public selectedInvId: any;
   constructor(public restApi: WarehouseserviceService,
     public aroute: ActivatedRoute,
@@ -34,10 +34,14 @@ export class WarehouseEditComponent implements OnInit {
     }
     updateWarehouse() {
       this.warehouseData.inventoryId=this.inventoryId;
+      if(this.warehouseData.inventoryShipped<=this.warehouseData.inventoryReceived){
       this.restApi.updateWarehouse(this.warehouseData).subscribe(data =>
         this.router.navigate(['/app-warehouse-list']))
     }
-  
+  else{
+    alert('inventoryshipped cannot be greater than inventory received')
+  }
+}
    /* onClick(cus: any) {
       this.router.navigate(['/app-warehouse-edit', ware.cid]);
     }*/

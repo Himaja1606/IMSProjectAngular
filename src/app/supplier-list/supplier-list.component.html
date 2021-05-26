@@ -34,6 +34,7 @@
         <th scope="col">Supplier Id</th>
         <th scope="col">Supplier Name</th>
         <th scope="col">Supplied Quantity</th>
+        <th scope="col">ProductId</th>
         <th colspan="2">Action</th>
       </tr>
     </thead>
@@ -43,6 +44,7 @@
         <td>{{s.supplierId}}</td>
         <td>{{s.supplierName}}</td>
         <td>{{s.suppliedQuantity}}</td>
+        <td>1</td>
 
         <td> <button class="btn-primary" routerLink="/app-supplier-delete/{{s.supplierId}}
             " >delete</button></td>

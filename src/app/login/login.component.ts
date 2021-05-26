@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Router } from '@angular/router';
-import { getMaxListeners } from 'process';
-import {Admin} from '../Admin';
 import { CustomerserviceService } from '../customerservice.service';
 
 @Component({
@@ -26,6 +24,9 @@ constructor(public restApi: CustomerserviceService,
       console.log(this.customerDetails.customerEmail);
       if(this.customerDetails.customerEmail=='admin@gmail.com' && this.Password=='administrator'){
         this.router.navigate(['/app-home'])
+      }
+      else{
+        alert('no account found!!!PLease verify your credentials')
       }
       }
     }

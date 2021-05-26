@@ -22,6 +22,14 @@ export class SupplierCreateComponent implements OnInit {
 
 
  addSupplier() {
+   if(this.supplierDetails.supplierName==''){
+     alert('supplier name cannot be empty!!!!')
+   }
+   else if(this.supplierDetails.suppliedQuantity==0){
+     alert('quantity cannot be null!!')
+   }
+   else{
    this.restApi.createSupplierDetails(this.supplierDetails).subscribe((data: {}) => {this.router.navigate(['/app-supplier-list']) })
  }
+}
 }

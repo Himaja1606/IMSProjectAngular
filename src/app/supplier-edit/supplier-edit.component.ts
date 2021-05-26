@@ -32,9 +32,17 @@ export class SupplierEditComponent implements OnInit {
   }
   updateSupplier() {
     this.supplierData.customerid=this.supplierId;
+    if(this.supplierData.supplierName==''){
+      alert('supplier name cannot be empty!!!!')
+    }
+    else if(this.supplierData.suppliedQuantity==0){
+      alert('quantity cannot be null!!')
+    }
+    else{
     this.restApi.updateSupplierDetails(this.supplierData).subscribe(data =>
       this.router.navigate(['/app-supplier-list']))
-  }
+    }
+    }
 
  /* onClick(cus: any) {
     this.router.navigate(['/app-customer-edit', cus.customerid]);

@@ -26,6 +26,7 @@
     </div>
     </li>
 </ul>-->
+
 <ul *ngFor="let o of orders">
   <li>
   <table class="table table-bordered">
@@ -36,6 +37,7 @@
           <th scope="col">Order Price</th>
           <th scope="col">Order Quantity</th>
           <th scope="col">Customer Id</th>
+          <th scope="col">Product Id</th>
           <th colspan="2">Action</th>
         </tr>
       </thead>
@@ -47,20 +49,24 @@
           <td>{{o.orderPrice}}</td>
           <td>{{o.orderQuantity}}</td>
           <td>{{o.customer.customerId}}</td>
+          <td>1</td>
         <!--  <td> <button class="btn-primary" routerLink="/app-customer-delete/{{c.customerId}}
               " >delete</button></td>-->
           <td> <button class="btn-primary" routerLink="/app-order-edit/{{o.orderId}}
                   " >update</button></td>
+         <!-- <td> <button class="btn-primary" routerLink="/app-order-delete/{{o.orderId}}
+      " >delete</button></td> -->
           
         </tr>
         
       </tbody>
     </table>
   </li>
-  </ul>
+</ul>
  
   <div class="row mb-3 px-3">
      <button type="submit" class="btn btn-blue text-center" routerLink="/app-order-create/:customerId">Add Order</button>
+     
      <button type="submit" class="btn btn-blue text-center" routerLink="/app-home">Home</button>
     </div>
 <router-outlet></router-outlet>
